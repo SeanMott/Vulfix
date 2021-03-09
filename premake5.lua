@@ -74,7 +74,10 @@ project "Vulfix"
     defines
     {
         "GLM_FORCE_RADIANS",
-        "GLM_FORCE_DEPTH_ZERO_TO_ONE"
+        "GLM_FORCE_DEPTH_ZERO_TO_ONE",
+        "GLFW_VULKAN_STATIC", 
+        --"GLFW_INCLUDE_VULKAN"
+        "GLFW_INCLUDE_NONE"
     }
 
     filter "system:windows"
@@ -85,8 +88,7 @@ project "Vulfix"
         defines
         {
             "Window_Build",
-            "Enable_Vulkan",
-            "GLFW_INCLUDE_VULKAN",
+            "Enable_Vulkan"
         }
     
     filter "configurations:Debug"
@@ -141,7 +143,10 @@ links
 defines
 {
     "GLM_FORCE_RADIANS",
-    "GLM_FORCE_DEPTH_ZERO_TO_ONE"
+    "GLM_FORCE_DEPTH_ZERO_TO_ONE",
+    "GLFW_VULKAN_STATIC", 
+    --"GLFW_INCLUDE_VULKAN"
+    "GLFW_INCLUDE_NONE"
 }
 
 filter "system:windows"
@@ -153,7 +158,6 @@ filter "system:windows"
     {
         "Window_Build",
         "Enable_Vulkan",
-        "GLFW_INCLUDE_VULKAN",
     }
 
 filter "configurations:Debug"
