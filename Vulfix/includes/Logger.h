@@ -7,6 +7,11 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+#define Vulfix_Log_NULLWarning(whatWasNULL, methodThatCalled, description) printf("Vulfix Warning: NULL %s || Method: \"%s\" || %s\n", whatWasNULL, methodThatCalled, description);
+#define Vulfix_Log_NULLError(whatWasNULL, methodThatCalled, description) printf("Vulfix Error: NULL %s || Method: \"%s\" || %s\n", whatWasNULL, methodThatCalled, description);
+#define Vulfix_Log_FailedObjectCreation(object, methodThatCalled, description) printf("Vulfix Error: Failed to create %s || Method: \"%s\" || %s\n", object, methodThatCalled, description);
+#define Vulfix_Log_FailedObjectDestruction(object, methodThatCalled, description) printf("Vulfix Error: Failed to destory %s || Method: \"%s\" || %s\n", object, methodThatCalled, description);
+
 #define LogMessage(message) printf("%s\n", message);
 
 #ifdef VULFIX_RELEASE

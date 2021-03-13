@@ -34,7 +34,7 @@ extern "C" {
 		const void* applicationPNext;
 		const void* instancePNext;
 
-		//allocator
+		//allocators
 		const VkAllocationCallbacks* allocator;
 		const VkAllocationCallbacks* deallocator;
 

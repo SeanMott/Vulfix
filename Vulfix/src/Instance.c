@@ -36,6 +36,12 @@ static void CleanList(void* string)
 //checks for validation layer support || returns false if a layer was not on the system
 static bool Vulfix_Instance_CheckLayerSupport(const char** layers, uint32_t count)
 {
+	if (layers == NULL)
+	{
+		Vulfix_Log_NULLError("layers", "Vulfix_Instance_CheckLayerSupport", "No layers were found, can not check their validity.");
+		return false;
+	}
+
 	//gets the system layers
 	uint32_t layerCount;
 	vkEnumerateInstanceLayerProperties(&layerCount, NULL);
@@ -225,7 +231,7 @@ Vulfix_Instance* Vulfix_Instance_Create(Vulfix_Instance_CreateInfo* info)
 
 	//make instance
 	Vulfix_Instance* instance = (Vulfix_Instance*)malloc(sizeof(Vulfix_Instance));
-	//instance->instance = NULL;
+	instance->instance = VK_NULL_HANDLE;
 	if (vkCreateInstance(&instInfo, info->allocator, &instance->instance) != VK_SUCCESS)
 	{
 		//free(instance);
