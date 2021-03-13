@@ -36,5 +36,5 @@ loggerInfo.messageSeverity = Vulfix_MsgSev_Error;
 Vulfix_DebugLogger* logger = Vulfix_DLogger_Create(instance->instance, &loggerInfo);
 ```
 
-# Builindg
+# Building
 Vulfix can be built with the premake file.
