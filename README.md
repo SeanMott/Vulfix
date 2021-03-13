@@ -1,5 +1,5 @@
 # Vulfix
-Vulfix is a Vulkan lib that speeds up the boiler plate code. It doesn't take away the low level control but wraps it in functions and struct objects.
+Vulfix is a C library for speeding up the boiler plate code of Vulkan, without losing low level control.
 
 # Example
 
