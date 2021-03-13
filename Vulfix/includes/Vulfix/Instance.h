@@ -8,20 +8,23 @@ extern "C" {
 #endif
 
 #include <vulkan\vulkan.h>
-//#include <stdbool.h>
+#include <stdbool.h>
 #include <stdint.h>
 
 	//defines the create info
 	typedef struct
 	{
+		//tells it to enable the layers or not
+		bool enableDebugger;
+
 		//application info
 		uint32_t applicationVersion, engineVersion, apiVersion;
 
 		//instance info
 		VkInstanceCreateFlags flags;
 		uint32_t layerCount, extensionCount;
-		const char* const* layerNames;
-		const char* const* extensionNames;
+		const char** layerNames;
+		const char** extensionNames;
 
 		//names
 		const char* appName;
@@ -45,6 +48,7 @@ extern "C" {
 	{
 		VkInstance instance;
 		const VkAllocationCallbacks* deallocator;
+		bool debuggerIsEnabled;
 
 	} Vulfix_Instance;
 

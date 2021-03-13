@@ -80,6 +80,8 @@ project "Vulfix"
         "GLFW_INCLUDE_NONE"
     }
 
+    flags {"NoRuntimeChecks"}
+
     filter "system:windows"
         --cppdialect "C++17"
         staticruntime "On"
